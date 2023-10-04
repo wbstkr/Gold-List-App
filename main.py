@@ -14,9 +14,13 @@ else:
 # Main Menu
 main_menu = tkinter.Tk()
 
+
 # Add window
 def open_add_window():
     add_window = tkinter.Toplevel(main_menu)
+    add_window.protocol("WM_DELETE_WINDOW", lambda: None)
+    add_window.geometry("300x200")
+    add_window.resizable(False, False)
 
     def close_add_window():
         add_window.destroy()
@@ -46,5 +50,8 @@ main_menu.rowconfigure(0, weight=1)
 main_menu.rowconfigure(1, weight=1)
 main_menu.columnconfigure(0, weight=1)
 main_menu.columnconfigure(1, weight=1)
+
+main_menu.geometry("600x600")
+main_menu.resizable(False, False)
 
 main_menu.mainloop()
